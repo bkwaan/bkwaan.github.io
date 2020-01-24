@@ -1,0 +1,46 @@
+body {
+    font-family: 'ABeeZee'
+}
+.title {
+    margin: auto;
+    border: 1px solid	#E8E8E8;
+    width: 25%;
+    padding: 0px 20px 20px 20px;
+    font-size: 13px;
+}
+.title > p {
+    font-size: 25px;
+}
+div>input {
+    padding: 4px;
+    width: 95%;
+    margin: auto;
+}
+
+.flex-cont {
+    display:flex;
+    flex-direction: column;
+}
+
+.flex-cont > div {
+    border: 1px solid #f1f1f1;
+    width: 23%;
+    padding-right:10px;
+    margin: auto;
+    font-size: 13px;
+}
+
+img {
+    float:left;
+    padding:10px;
+}
+
+.flex-cont > div:hover{
+    background-color: #E8E8E8;
+}
+
+div span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
