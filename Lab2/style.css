@@ -4,7 +4,7 @@ body {
 .title {
     margin: auto;
     border: 1px solid	#E8E8E8;
-    width: 25%;
+    width: 35%;
     padding: 0px 20px 20px 20px;
     font-size: 13px;
 }
@@ -13,8 +13,9 @@ body {
 }
 div>input {
     padding: 4px;
-    width: 95%;
+    width: 80%;
     margin: auto;
+    text-align: center;
 }
 
 .flex-cont {
@@ -24,7 +25,7 @@ div>input {
 
 .flex-cont > div {
     border: 1px solid #f1f1f1;
-    width: 23%;
+    width: 30%;
     padding-right:10px;
     margin: auto;
     font-size: 13px;
@@ -44,3 +45,33 @@ div span {
     font-weight: bold;
 }
 
+.add {
+    float: right;
+    padding:10px;
+}
+
+p > button {
+    background-color: red;
+    border-radius: 8px;
+    font-size:16px;
+    color:white;
+    padding:10px;
+    float: right;
+}
+
+#addBtn {
+    visibility: hidden;
+    background-color: #E8E8E8;
+    border: 1px solid #f1f1f1;
+    font-size: 20px;
+    width :20%;
+    margin-left:90px;
+    display:block;
+}
+
+#inputs {
+    width: 60%;
+    display:block;
+    margin:auto;
+
+}
