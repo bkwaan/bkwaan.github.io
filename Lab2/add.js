@@ -8,7 +8,7 @@ function clickedText() {
 
 function unclicked() {
     for(var i = 1; i <= 3; i++) {
-        document.getElementsByTagName("INPUT")[i].setAttribute("type","hidden");
+       document.getElementsByTagName("INPUT")[i].setAttribute("type","hidden");
     }
     var btn = document.getElementById("addBtn");
     btn.style.visibility="hidden";
@@ -41,6 +41,12 @@ function getImg(){
     return img;
 }
 
+function clearBox(){
+    document.getElementById("name").value ="";
+    document.getElementById("about").value="";
+    document.getElementById("source").value="";
+}   
+
 
 
 function loadCont() {
@@ -58,6 +64,7 @@ function loadCont() {
     btn.addEventListener('click',function(){
         deleted(divT.id);
     });
+    clearBox();
     unclicked();
 
 }
