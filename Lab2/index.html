@@ -8,18 +8,21 @@
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
     <script src ="add.js"></script>
 </head>
-<body>
+<body onLoad="javascript:reload()">
     <div class="title" >
         <p>
             Artist Directory
         </p>
-        <input type ="text"> 
-        <button class="add" onclick="clickedText()">Add Artist</button>
+        <div id = "userBtns">
+                <input type ="text" id ="searchBar"> 
+        <button id="add" onclick="clickedText()">Add</button>
+        <button id="search" onclick="addArtisst()">Search</button>
+        </div>
         <div id ="inputs">
         <input type ="hidden" id ="name" placeholder="Artist Name">
         <input type ="hidden" id ="about" placeholder="About Artisit">
         <input type ="hidden" id ="source" placeholder="Image Url">
-        <button id="addBtn" onclick="loadCont()">Add</button>
+        <button id="addBtn" onclick ="addZ()">Add</button>
         </div>
     </div>
 

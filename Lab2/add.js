@@ -21,8 +21,11 @@ function getDivCount() {
 }
 
 function deleted(to_delete) {
-    var del = document.getElementById(to_delete);
-    del.remove(); 
+    var b = to_delete;
+    var c = b.charAt(0);
+    var del = document.getElementById(c);
+    del.remove();
+    localStorage.removeItem(c); 
 }
 
 function getArtist(){
@@ -36,8 +39,7 @@ function getDesc(){
 }
 
 function getImg(){
-    var img = document.createElement("img");
-    img.src = document.getElementById("source").value;
+    var img = document.getElementById("source").value;
     return img;
 }
 
@@ -47,24 +49,46 @@ function clearBox(){
     document.getElementById("source").value="";
 }   
 
+function addZ(){
+    const myObj = {id: getDivCount(), name: getArtist(), about: getDesc(), source: getImg()};
+    localStorage.setItem(myObj.id,JSON.stringify(myObj));
+    clearBox();
+    unclicked();
+    adding(myObj.id);
+}
 
-
-function loadCont() {
+function adding(to_add) {
     var divT = document.createElement("div");
-    divT.id = getDivCount();
+    var img = document.createElement("img");
+    var obj = JSON.parse(localStorage.getItem(to_add));
+    divT.id = obj.id;
+    var b = obj.id;
+    var c = "btn";
+    var img = document.createElement("img");
+    img.setAttribute("src",obj.source);
     var para = document.createElement("p");
     var span = document.createElement("span");
     var btn = document.createElement("button");
-    btn.innerText = "Delete";
-    span.append(getArtist());
-    para.append(span,btn);
-    divT.append(getImg(),para,getDesc());
     var a = document.getElementsByClassName("flex-cont")[0];
-    a.appendChild(divT);
+    btn.innerText = "Delete";
+    btn.setAttribute("id",b+c);
     btn.addEventListener('click',function(){
-        deleted(divT.id);
+        deleted(this.id);
     });
-    clearBox();
-    unclicked();
+    span.append(obj.name);
+    para.append(span,btn);
+    divT.append(img,para,obj.about);
+    a.appendChild(divT);
 
 }
+
+function reload() {
+    if(localStorage.length >= 0) {
+    for(var i in localStorage) {
+       var obj = JSON.parse(localStorage.getItem(i));
+       adding(obj.id);
+    }
+}
+}
+
+
