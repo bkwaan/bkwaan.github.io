@@ -83,15 +83,27 @@ function adding(to_add) {
 }
 
 function reload() {
-    if(localStorage.length >= 0) {
     for(var i in localStorage) {
        var obj = JSON.parse(localStorage.getItem(i));
        adding(obj.id);
     }
 }
-}
 
-function dummy() {
+
+function search() {
+    var input = document.getElementById("searchBar").value.toLowerCase();
+    var flex = document.getElementsByClassName("flex-cont")[0];
+    for(i = 0; i < getDivCount(); i++) {
+        var span = flex.getElementsByTagName("span")[i];
+        var x = span.parentNode.parentNode;
+        if(span.innerText.toLowerCase().includes(input)) {
+            x.style.display = 'inline';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+
     
+
 }
 
