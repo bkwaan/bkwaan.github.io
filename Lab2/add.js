@@ -1,3 +1,5 @@
+var q = [];
+
 function clickedText() {
     for(var i = 1; i <= 3; i++) {
         document.getElementsByTagName("INPUT")[i].setAttribute("type","text");
@@ -23,8 +25,11 @@ function getDivCount() {
 function deleted(to_delete) {
     var b = to_delete;
     var c = b.charAt(0);
+    var x = Number(c);
     var del = document.getElementById(c);
     del.remove();
+    q.push(x);
+    console.log(x);
     localStorage.removeItem(c); 
 }
 
@@ -50,19 +55,20 @@ function clearBox(){
 }   
 
 function addZ(){
-    const myObj = {id: getDivCount(), name: getArtist(), about: getDesc(), source: getImg()};
-    localStorage.setItem(myObj.id,JSON.stringify(myObj));
+    var x = checkBtnID();
+    const myObj = {id: x, name: getArtist(), about: getDesc(), source: getImg()};
+    localStorage.setItem(x,JSON.stringify(myObj));
     clearBox();
     unclicked();
-    adding(myObj.id);
+    adding(x);
 }
 
 function adding(to_add) {
     var divT = document.createElement("div");
     var img = document.createElement("img");
     var obj = JSON.parse(localStorage.getItem(to_add));
-    divT.id = obj.id;
-    var b = obj.id;
+    divT.id = to_add;
+    var b = to_add;
     var c = "btn";
     var img = document.createElement("img");
     img.setAttribute("src",obj.source);
@@ -82,12 +88,27 @@ function adding(to_add) {
 
 }
 
-function reload() {
-    for(var i in localStorage) {
-       var obj = JSON.parse(localStorage.getItem(i));
-       adding(obj.id);
+function checkBtnID() {
+    var x;
+    if (q === undefined || q.length === 0) {
+        x = getDivCount() +1;
+        console.log("in undef");
+    } else {
+         x = q.pop();
+         console.log("popping");
     }
+    return x;
+
 }
+
+function reload() {
+    for (let i = 0; i < localStorage.length; i++) {   
+        let key = localStorage.key(i);
+        adding(key);
+    }
+ 
+}
+
 
 
 function search() {
@@ -102,6 +123,7 @@ function search() {
             x.style.display = 'none';
         }
     }
+    checkBtnID();
 
     
 
