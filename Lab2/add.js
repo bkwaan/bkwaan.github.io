@@ -92,10 +92,8 @@ function checkBtnID() {
     var x;
     if (q === undefined || q.length === 0) {
         x = getDivCount() +1;
-        console.log("in undef");
     } else {
          x = q.pop();
-         console.log("popping");
     }
     return x;
 
