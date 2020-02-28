@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Bosco Kwan Home Page
+    </title>
+    <link rel = "stylesheet" href = "style.css">
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <script src ="add.js"></script>
+</head>
+<body onLoad="javascript:loadArtist()">
+    <div class="title" >
+        <p>
+            Artist Directory
+        </p>
+        <div id = "userBtns">
+                <input type ="text" id ="searchBar"> 
+        <button id="add" onclick="clickedText()">Add</button>
+        <button id="search" onclick="search()">Search</button>
+        </div>
+        <div id ="inputs">
+        <input type ="hidden" id ="name" placeholder="Artist Name">
+        <input type ="hidden" id ="about" placeholder="About Artisit">
+        <input type ="hidden" id ="source" placeholder="Image Url">
+        <button id="addBtn" onclick ="addzArtist()">Add</button>
+        </div>
+    </div>
+
+    <div class ="flex-cont">
+    </div>
+
+</body>
+</html>
