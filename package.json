@@ -1,11 +1,19 @@
 {
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
-    },
-    "name": "api_test",
-    "version": "0.0.1",
-    "dependencies": {
-        "express": "^4.17.1"
-    }
+  "name": "bkwaan.github.io",
+  "version": "1.0.0",
+  "description": "boscos lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "hello world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkwaan/bkwaan.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkwaan/bkwaan.github.io/issues"
+  },
+  "homepage": "https://github.com/bkwaan/bkwaan.github.io#readme"
 }
