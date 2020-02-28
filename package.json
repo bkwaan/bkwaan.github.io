@@ -1,10 +1,11 @@
 {
   "name": "bkwaan.github.io",
   "version": "1.0.0",
-  "description": "boscos lab",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "hello world"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/bkwaan/bkwaan.github.io/issues"
   },
-  "homepage": "https://github.com/bkwaan/bkwaan.github.io#readme",
-  "dependencies": {
-    "module": "^1.2.5"
-  }
+  "homepage": "https://github.com/bkwaan/bkwaan.github.io#readme"
 }
