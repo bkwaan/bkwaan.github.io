@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bkwaan/bkwaan.github.io/issues"
   },
-  "homepage": "https://github.com/bkwaan/bkwaan.github.io#readme"
+  "homepage": "https://github.com/bkwaan/bkwaan.github.io#readme",
+  "dependencies": {
+    "module": "^1.2.5"
+  }
 }
