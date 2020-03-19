@@ -1,0 +1,48 @@
+
+input {
+    border-color: #bdbbb7;
+    display: block;
+    height: 25px;
+    width: 300px;
+    font-size:20px;
+    text-align: center;
+    margin:auto;
+
+}
+
+button {
+    border-color: #bdbbb7;
+}
+
+
+#logged {
+    text-align: left;
+    background-color: #F9F9EA;
+    margin-top:10%;
+    margin-right:35%;
+    margin-left:35%;
+    padding:50px;
+}
+
+#title {
+    font-weight: bold;
+    margin-top:0px;
+    margin-right: 55%;
+    margin-bottom: 20%;
+    font-size: 20px;
+    color: #8f9694;
+    text-align: center;
+}
+
+#loginBtn {
+    background-color: #f5bc42;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    margin-top:10px;
+    width: 300px;
+}
+
+#center {
+    text-align: center;
+}

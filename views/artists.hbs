@@ -1,0 +1,36 @@
+<div class="title">
+    <p>
+        Artist Directory
+    </p>
+    <div id="userBtns">
+        <button id="add" onclick="clickedText()">Add</button>
+        <form action ='/search/' method = "GET">
+            <input type="text" id="searchBar" name ='searched'>
+            <button type ='submit'>Search</button>
+        </form>
+    </div>
+        <div id ="inputs">
+        <form action = '/addArtist/' method="POST">
+            <input type="hidden" name="name" placeholder="Artist Name">
+            <input type="hidden" name="about" placeholder="About Artisit">
+            <input type="hidden" name="source" placeholder="Image Url">
+            <button id="addBtn" type ='submit'>Add</button>
+        </form>
+        </div>
+</div>
+
+<div class="flex-cont">
+    {{#each artist}}
+    <form action ='/deleteArtist/' method ="POST">
+    <div>
+        <img src = '{{this.img}}' >
+        <input type ='hidden' name ='id' value="{{this.id}} ">
+        <p>
+            <span>{{this.name}}</span>
+            <button type ='submit'>Delete</button>
+        </p>
+        {{this.about}}
+    </div>
+    </form>
+    {{/each}}
+</div>

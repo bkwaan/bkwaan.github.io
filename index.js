@@ -1,43 +1,33 @@
 const express = require('express');
 var app = express();
-var path = require('path');
-var fs = require('fs');
 var bodyParser = require('body-parser');
-var jsonFILE = './public/artists.json';
-app.use(bodyParser.text());
+let path = require('path');
+let db = require('./util/database');
+
+app.use(bodyParser.json());
+
+var routes = require('./routes/loginroute');
+
+let expressHbs = require('express-handlebars');
+app.engine('hbs',
+  expressHbs({layoutsDir:'views/layouts/',
+  defaultLayout:'main-layout',
+  extname:'hbs'
+})
+);
+app.set('view engine','hbs');
+app.set('views','views');
+
+app.use(express.static(path.join(__dirname,'public')));
+
+app.use(bodyParser.urlencoded({ extended: false })) // middleware
 
 
-app.use(express.static('public'));
-
-app.post('/add', (req,res)=> {
-  var data = JSON.parse(req.body);
-  fs.writeFile(jsonFILE,(JSON.stringify(data)),(err)=> {
-    if(err) {
-      console.log(err);
-    } 
-  });
+app.get('/', function(req,res){
+  res.render('login', {mainCSS : true});
 });
 
+app.use(routes);
 
-app.get('/loads', (req,res)=> {
-  var artist;
-  fs.readFile('./public/artists.json',(err,data)=> {
-    if(err) {
-      console.log(err);
-    }
-      artist = JSON.parse(data);
-      res.send(artist);
-    
-  })
-});
-
-app.post('/delete',(req,res)=> {
-    var data = JSON.parse(req.body);
-    fs.writeFile(jsonFILE,(JSON.stringify(data)),(err)=>{
-      if(err) {
-        console.log(err);
-      }
-    });
-});
 
 app.listen(process.env.PORT || 3000);
