@@ -12,5 +12,7 @@ router.post('/deleteArtist/',artistcontroller.deleteArtist);
 
 router.get('/search/',artistcontroller.search);
 
+router.get('/logout', artistcontroller.logout);
+
 
 module.exports = router;

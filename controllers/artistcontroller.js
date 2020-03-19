@@ -16,3 +16,7 @@ exports.search = async(req,res,next) => {
     let data = await mod.search(req.query.searched);
     res.render('artists', {'artist' : data[0], artistCSS:true});    
 }
+
+exports.logout = async(req,res,next) => {
+    res.render('login',{mainCSS:true});
+}

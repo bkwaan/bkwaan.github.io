@@ -83,3 +83,19 @@ div span {
     border: 1px solid	#E8E8E8;
 
 }
+
+.logout {
+    background-color: #f5bc42;
+    margin: 15px;
+}
+
+#logoutBtn{
+    margin:5px;
+    background-color: #969e98;
+    font-weight: bold;
+    color:white;
+    margin-left: 90%;
+    padding:10px;
+    width: 80px;
+    font-size: 15px;
+}
